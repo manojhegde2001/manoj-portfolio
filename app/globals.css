@@ -8,9 +8,9 @@
   --color-sky: #7fb4ff;
   --color-sun: #ffd23f;
   --color-muted: #4a4a4a;
-  --font-display: var(--font-bricolage), "Arial Black", system-ui, sans-serif;
-  --font-sans: var(--font-bricolage), system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, Menlo, Consolas, monospace;
+  --font-display: var(--font-archivo), "Arial Black", system-ui, sans-serif;
+  --font-sans: var(--font-archivo), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, Menlo, Consolas, monospace;
 }
 
 @layer base {
@@ -138,8 +138,10 @@
 }
 
 .pill {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* PILL_ICON_GAP */
   height: 48px;
   padding: 0 23px;
   font-family: var(--font-sans);
@@ -152,6 +154,12 @@
 }
 .thing.pill {
   padding: 0;
+}
+.pill-icon {
+  width: 18px; /* PILL_ICON_SIZE */
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
 }
 
 /* Hidden element used to measure glyph widths. */
@@ -204,7 +212,7 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   padding: 9px 13px;
   border: 2px solid var(--color-ink);
   background: #fff;

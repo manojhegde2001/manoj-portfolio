@@ -1,5 +1,7 @@
 import Matter from "matter-js";
 import { createLetterBody, createLid, createPillBody, createWalls, wakeBody } from "./bodies";
+
+const SVG_NS = "http://www.w3.org/2000/svg";
 import {
   AUTO_DROP_MS,
   BAR_HEIGHT,
@@ -24,6 +26,10 @@ const { Engine, Composite, Body, Constraint, Events } = Matter;
 export interface WorldConfig {
   name: string;
   skills: readonly string[];
+  /** Optional 24×24 SVG path per skill, drawn before the label. */
+  skillIcons?: Readonly<Record<string, string>>;
+  /** Width the icon adds to a pill (icon + gap), in px. */
+  skillIconWidth?: number;
   mobileSkillCount: number;
   pillColors: readonly string[];
   letterColors: readonly string[];
@@ -197,11 +203,23 @@ export function createPhysicsWorld(
     const skills = width < MOBILE_BREAKPOINT ? config.skills.slice(0, config.mobileSkillCount) : config.skills;
     skills.forEach((skill, i) => {
       const h = PILL_HEIGHT;
-      const w = Math.min(measurer.pill(skill) + PILL_PADDING_X, width - 24);
+      const icon = config.skillIcons?.[skill];
+      const iconW = icon ? (config.skillIconWidth ?? 0) : 0;
+      const w = Math.min(measurer.pill(skill) + iconW + PILL_PADDING_X, width - 24);
       const bg = config.pillColors[i % config.pillColors.length];
       const el = document.createElement("div");
       el.className = "thing pill";
-      el.textContent = skill;
+      if (icon) {
+        const svg = document.createElementNS(SVG_NS, "svg");
+        svg.setAttribute("class", "pill-icon");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("aria-hidden", "true");
+        const path = document.createElementNS(SVG_NS, "path");
+        path.setAttribute("d", icon);
+        svg.append(path);
+        el.append(svg);
+      }
+      el.append(skill);
       el.style.width = `${w}px`;
       el.style.height = `${h}px`;
       el.style.background = bg;

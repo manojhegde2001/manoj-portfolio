@@ -83,7 +83,7 @@ export default function StackGame({ labels, colors, reduced, onUpdate }: Props) 
       ctx.strokeStyle = COLORS.ink;
       ctx.strokeRect(-w / 2, -h / 2, w, h);
       if (b.label) {
-        ctx.font = `600 ${Math.max(10, 13 * scale) * dpr}px ${font}`;
+        ctx.font = `700 ${Math.max(10, 13 * scale) * dpr}px ${font}`;
         if (ctx.measureText(b.label).width + 12 * dpr < w) {
           ctx.fillStyle = b.color === COLORS.ink ? COLORS.paper : COLORS.ink;
           ctx.textAlign = "center";

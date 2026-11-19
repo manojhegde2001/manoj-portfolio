@@ -6,10 +6,10 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { EXPERIENCE, PERSON, PROJECTS } from "@/config/site";
 
 const wrap = "px-(--gutter) py-[clamp(64px,9vw,110px)]";
-const eyebrow = "font-mono text-[0.76rem] uppercase tracking-[0.12em]";
+const eyebrow = "font-mono text-[0.76rem] uppercase tracking-[0.03em]";
 const h2 = "mt-3 mb-10 text-[clamp(2.4rem,6vw,4.6rem)] leading-none font-extrabold tracking-[-0.03em]";
 const outLink =
-  "border-b-2 border-ink font-mono text-[0.8rem] uppercase tracking-[0.08em] hover:bg-lime focus-visible:bg-lime";
+  "border-b-2 border-ink font-mono text-[0.8rem] uppercase tracking-[0.04em] hover:bg-lime focus-visible:bg-lime";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
               Hi, I&apos;m {PERSON.fullName.split(" ")[0]}.
             </h2>
             <p className="text-[clamp(1.1rem,1.8vw,1.35rem)] leading-relaxed">{PERSON.summary}</p>
-            <p className="mt-4 font-mono text-[0.8rem] uppercase tracking-[0.08em] text-muted">
+            <p className="mt-4 font-mono text-[0.8rem] uppercase tracking-[0.04em] text-muted">
               Based in {PERSON.location} · {PERSON.years} years
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
               <li key={`${job.company}-${job.date}`} className="grid gap-4 md:grid-cols-[240px_1fr]">
                 <div>
                   <p className="text-[1.4rem] font-extrabold tracking-[-0.02em]">{job.company}</p>
-                  <p className="font-mono text-[0.74rem] uppercase tracking-[0.08em] text-muted">{job.date}</p>
+                  <p className="font-mono text-[0.74rem] uppercase tracking-[0.04em] text-muted">{job.date}</p>
                 </div>
                 <div>
                   <h3 className="text-[1.15rem] font-bold">{job.role}</h3>
@@ -132,7 +132,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t-2 border-ink px-(--gutter) py-6 font-mono text-[0.7rem] uppercase tracking-[0.08em] text-muted">
+      <footer className="border-t-2 border-ink px-(--gutter) py-6 font-mono text-[0.7rem] uppercase tracking-[0.04em] text-muted">
         © {PERSON.fullName} · Built with Next.js and matter-js
       </footer>
     </>

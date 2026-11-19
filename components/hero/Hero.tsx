@@ -1,4 +1,5 @@
 import { COLORS, NAME, PERSON, PILL_COLORS, SKILLS } from "@/config/site";
+import { SKILL_ICONS } from "@/lib/skill-icons";
 import { HeroInteractive } from "./HeroInteractive";
 
 const initials = PERSON.fullName
@@ -29,7 +30,7 @@ export function Hero() {
         </a>
         <nav
           aria-label="Primary"
-          className="pointer-events-auto flex gap-[clamp(12px,2.4vw,22px)] font-mono text-[0.74rem] uppercase tracking-[0.08em]"
+          className="pointer-events-auto flex gap-[clamp(12px,2.4vw,22px)] font-mono text-[0.74rem] uppercase tracking-[0.04em]"
         >
           <a className={navLink} href="#work">
             Work
@@ -66,6 +67,11 @@ export function Hero() {
                 className="pill"
                 style={{ background: bg, color: bg === COLORS.ink ? COLORS.paper : COLORS.ink }}
               >
+                {SKILL_ICONS[skill] && (
+                  <svg className="pill-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d={SKILL_ICONS[skill]} />
+                  </svg>
+                )}
                 {skill}
               </li>
             );

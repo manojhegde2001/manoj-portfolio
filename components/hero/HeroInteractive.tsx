@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { COLORS, LETTER_COLORS, MOBILE_SKILL_COUNT, NAME, PERSON, PILL_COLORS, SKILLS } from "@/config/site";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { PILL_ICON_GAP, PILL_ICON_SIZE, SKILL_ICONS } from "@/lib/skill-icons";
 import { GRAVITY, type GravityPreset } from "@/lib/physics/constants";
 import type { PhysicsApi, WorldConfig } from "@/lib/physics/world";
 import { Controls } from "./Controls";
@@ -14,6 +15,8 @@ const PhysicsHero = dynamic(() => import("./PhysicsHero"), { ssr: false });
 const WORLD_CONFIG: WorldConfig = {
   name: NAME,
   skills: SKILLS,
+  skillIcons: SKILL_ICONS,
+  skillIconWidth: PILL_ICON_SIZE + PILL_ICON_GAP,
   mobileSkillCount: MOBILE_SKILL_COUNT,
   pillColors: PILL_COLORS,
   letterColors: LETTER_COLORS,
@@ -87,11 +90,11 @@ export function HeroInteractive() {
       )}
 
       <div className="hero-bar" ref={barRef}>
-        <p className="hero-tag font-mono text-[0.74rem] uppercase tracking-[0.08em] whitespace-nowrap">
+        <p className="hero-tag font-mono text-[0.74rem] uppercase tracking-[0.04em] whitespace-nowrap">
           {PERSON.tagline}
         </p>
         <p
-          className="physics-only hidden font-mono text-[0.76rem] uppercase tracking-[0.08em] min-[900px]:block"
+          className="physics-only hidden font-mono text-[0.76rem] uppercase tracking-[0.04em] min-[900px]:block"
           aria-hidden="true"
         >
           {hintFor(count.loose, count.total)}

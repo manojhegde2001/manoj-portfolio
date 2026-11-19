@@ -1,3 +1,4 @@
+// Must match .letter in globals.css (weight 800).
 const LETTER_FONT = "800 100px var(--font-display)";
 const PILL_FONT = "700 17px var(--font-sans)";
 

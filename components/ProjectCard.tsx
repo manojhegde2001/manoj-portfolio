@@ -3,7 +3,7 @@ import type { Project } from "@/config/site";
 import { DropIn } from "./DropIn";
 
 const linkBtn =
-  "inline-flex items-center gap-1 border-2 border-ink bg-white px-3 py-1.5 font-mono text-[0.72rem] uppercase tracking-[0.06em] shadow-[0_3px_0_var(--color-ink)] hover:bg-lime focus-visible:bg-lime";
+  "inline-flex items-center gap-1 border-2 border-ink bg-white px-3 py-1.5 font-mono text-[0.72rem] uppercase tracking-[0.03em] shadow-[0_3px_0_var(--color-ink)] hover:bg-lime focus-visible:bg-lime";
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   const { title, problem, logo, tags, link, accent } = project;

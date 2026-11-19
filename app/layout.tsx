@@ -1,19 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
+import { Archivo, Space_Mono } from "next/font/google";
 import { PERSON, SITE_URL, SKILLS } from "@/config/site";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({
+// Variable font: one file covers every weight we use.
+const display = Archivo({
   subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-bricolage",
+  variable: "--font-archivo",
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+const mono = Space_Mono({
   subsets: ["latin"],
-  weight: "500",
-  variable: "--font-jetbrains",
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 

@@ -31,9 +31,9 @@ function saveBest(n: number) {
 }
 
 const btn =
-  "inline-flex items-center gap-2 border-2 border-ink bg-lime px-5 py-2.5 font-mono text-[0.8rem] uppercase tracking-[0.08em] shadow-[0_4px_0_var(--color-ink)] hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0.5 active:shadow-none";
+  "inline-flex items-center gap-2 border-2 border-ink bg-lime px-5 py-2.5 font-mono text-[0.8rem] uppercase tracking-[0.04em] shadow-[0_4px_0_var(--color-ink)] hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0.5 active:shadow-none";
 
-const stat = "font-mono text-[0.7rem] uppercase tracking-[0.1em] text-muted";
+const stat = "font-mono text-[0.7rem] uppercase tracking-[0.05em] text-muted";
 
 export function PlaySection() {
   const reduced = useReducedMotion();
@@ -83,7 +83,7 @@ export function PlaySection() {
           Drop skill blocks onto the stack. Anything hanging over the edge gets sliced off, so line them up. Land{" "}
           <b>three perfect drops</b> in a row and your block grows back.
         </p>
-        <p className="mt-3 font-mono text-[0.8rem] uppercase tracking-[0.08em] text-muted">
+        <p className="mt-3 font-mono text-[0.8rem] uppercase tracking-[0.04em] text-muted">
           Tap, click, or press Space to drop
         </p>
 
@@ -112,22 +112,22 @@ export function PlaySection() {
           <>
             <StackGame key={gameKey} labels={SKILLS} colors={PILL_COLORS} reduced={reduced} onUpdate={onUpdate} />
             {/* On phones the scoreboard sits above the board, so mirror the score inside it. */}
-            <p className="pointer-events-none absolute top-3 left-3 font-mono text-[0.72rem] tracking-[0.08em] uppercase md:hidden" aria-hidden="true">
+            <p className="pointer-events-none absolute top-3 left-3 font-mono text-[0.72rem] tracking-[0.04em] uppercase md:hidden" aria-hidden="true">
               Score <b className="text-base tabular-nums">{score}</b> · Best <b className="tabular-nums">{best}</b>
             </p>
             <div className="pointer-events-none absolute inset-x-0 top-12 flex justify-center md:top-4">
               {status === "ready" && (
-                <span className="border-2 border-ink bg-white px-3 py-1 font-mono text-[0.72rem] uppercase tracking-[0.08em]">
+                <span className="border-2 border-ink bg-white px-3 py-1 font-mono text-[0.72rem] uppercase tracking-[0.04em]">
                   Tap to drop
                 </span>
               )}
               {status === "playing" && flash && (
-                <span key={score} className="border-2 border-ink bg-lime px-3 py-1 font-mono text-[0.72rem] uppercase tracking-[0.08em]">
+                <span key={score} className="border-2 border-ink bg-lime px-3 py-1 font-mono text-[0.72rem] uppercase tracking-[0.04em]">
                   {flash}
                 </span>
               )}
               {status === "over" && (
-                <span className="border-2 border-ink bg-coral px-3 py-1 font-mono text-[0.72rem] uppercase tracking-[0.08em]">
+                <span className="border-2 border-ink bg-coral px-3 py-1 font-mono text-[0.72rem] uppercase tracking-[0.04em]">
                   Game over · {score} · tap to retry
                 </span>
               )}
