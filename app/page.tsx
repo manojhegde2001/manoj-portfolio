@@ -53,7 +53,7 @@ export default function Home() {
 
         <section
           id="experience"
-          className={`${wrap} scroll-mt-4 border-t-2 border-ink`}
+          className={`${wrap} scroll-mt-4 overflow-x-clip border-t-2 border-ink`}
           aria-labelledby="experience-title"
         >
           <p className={eyebrow}>03 — Experience</p>

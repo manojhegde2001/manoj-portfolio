@@ -339,3 +339,53 @@
     cursor: image-set(url("/cursors/grabbing.png") 1x, url("/cursors/grabbing@2x.png") 2x) 16 16, grabbing;
   }
 }
+
+/* ===================== TIMELINE =====================
+   components/Timeline.tsx: <Reveal> adds .in to each .tl-item on scroll. The line draws down,
+   the marker pops, the date and card slide in, then points stagger in (--p = index).
+   Hidden states only apply when JS can reveal them and motion is welcome. */
+.tl-line {
+  transform-origin: top;
+}
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .tl-line {
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .tl-marker {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s;
+  }
+  .tl-date {
+    transition:
+      opacity 0.5s ease 0.2s,
+      transform 0.5s ease 0.2s;
+  }
+  .tl-card {
+    transition:
+      opacity 0.5s ease 0.15s,
+      transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s;
+  }
+  .tl-point {
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    transition-delay: calc(0.45s + var(--p, 0) * 0.08s);
+  }
+  .tl-item:not(.in) .tl-line {
+    transform: scaleY(0);
+  }
+  .tl-item:not(.in) .tl-marker {
+    transform: scale(0);
+  }
+  .tl-item:not(.in) .tl-date {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  .tl-item:not(.in) .tl-card {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  .tl-item:not(.in) .tl-point {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
