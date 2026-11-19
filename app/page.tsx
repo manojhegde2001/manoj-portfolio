@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Hero } from "@/components/hero/Hero";
 import { JsonLd } from "@/components/JsonLd";
+import { PlaySection } from "@/components/game/PlaySection";
 import { ProjectCard } from "@/components/ProjectCard";
 import { EXPERIENCE, PERSON, PROJECTS } from "@/config/site";
 
@@ -92,8 +93,16 @@ export default function Home() {
           </ol>
         </section>
 
+        <section id="play" className={`${wrap} scroll-mt-4 border-t-2 border-ink`} aria-labelledby="play-title">
+          <p className={eyebrow}>04 — Play</p>
+          <h2 id="play-title" className={h2}>
+            Stack the stack.
+          </h2>
+          <PlaySection />
+        </section>
+
         <section id="contact" className={`${wrap} scroll-mt-4 border-t-2 border-ink`} aria-labelledby="contact-title">
-          <p className={eyebrow}>04 — Contact</p>
+          <p className={eyebrow}>05 — Contact</p>
           <h2 id="contact-title" className={`${h2} !mb-6`}>
             Say hello.
           </h2>

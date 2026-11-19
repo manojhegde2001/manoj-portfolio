@@ -37,6 +37,9 @@ export function Hero() {
           <a className={`${navLink} max-[420px]:hidden`} href="#experience">
             Experience
           </a>
+          <a className={`${navLink} max-[520px]:hidden`} href="#play">
+            Play
+          </a>
           <a className={navLink} href="#contact">
             Contact
           </a>
