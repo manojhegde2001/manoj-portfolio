@@ -156,24 +156,33 @@ export const PROJECTS: readonly Project[] = [
 export interface Job {
   role: string;
   company: string;
+  location?: string;
   date: string;
+  /** True for the job you hold now: it gets the pulsing marker and a "Now" tag. */
+  current?: boolean;
   points: readonly string[];
+  /** Main tech used there, shown as chips. */
+  stack?: readonly string[];
 }
 
 export const EXPERIENCE: readonly Job[] = [
   {
     role: "Full Stack Developer",
     company: "Mistura Software Technologies",
+    location: "Bengaluru",
     date: "Jul 2026 – Present",
+    current: true,
     points: [
       "Develop full-stack features for the Ifric platform using Next.js on the frontend and NestJS on the backend.",
       "Build and maintain the Digital Passport product using Next.js and NestJS.",
       "Contribute across the stack on both projects, from frontend UI to backend APIs.",
     ],
+    stack: ["Next.js", "NestJS", "TypeScript"],
   },
   {
     role: "Full Stack Developer",
     company: "Invenzo Labs",
+    location: "Bengaluru",
     date: "Aug 2023 – Jun 2026",
     points: [
       "Architected and delivered end-to-end features for the TechNova HRMS using the MERN stack, with secure, scalable Node.js and MongoDB APIs and efficient schema design for payroll, attendance and performance modules.",
@@ -181,7 +190,70 @@ export const EXPERIENCE: readonly Job[] = [
       "Developed a centralized state management system and a reusable UI component library alongside scalable backend architectures.",
       "Built secure role-based access control (RBAC) and responsive dashboards for the Healing Pharma system, integrating third-party services with asynchronous client-server data flows.",
     ],
+    stack: ["React", "Node.js", "Express", "MongoDB", "Redux", "AWS"],
   },
 ];
+
+export interface Study {
+  title: string;
+  school: string;
+  date: string;
+  /** Square logo in /public. */
+  logo?: string;
+}
+
+/** Shown at the end of the experience timeline. */
+export const EDUCATION: readonly Study[] = [
+  {
+    title: "B.Tech, Computer Science",
+    school: "MS Ramaiah University of Applied Sciences",
+    date: "2023",
+    logo: "/education/ramaiah.png",
+  },
+];
+
+/**
+ * Numbers in the About section. These are written by hand (not counted from the lists above),
+ * because they include work that isn't shown on the site.
+ */
+export const STATS: readonly { value: string; label: string }[] = [
+  { value: "3+", label: "Years building" },
+  { value: "10+", label: "Projects shipped" },
+  { value: "5+", label: "Freelance sites" },
+  { value: "2", label: "Companies" },
+];
+
+export interface Focus {
+  title: string;
+  blurb: string;
+  /** Skill names; ones listed in lib/skill-icons.ts get a logo. */
+  skills: readonly string[];
+  color: string;
+}
+
+/** "What I do" cards in the About section. */
+export const FOCUS: readonly Focus[] = [
+  {
+    title: "Frontend",
+    blurb: "Fast, responsive interfaces with server-side rendering, reusable components and clean state management.",
+    skills: ["React", "Next.js", "TypeScript", "Redux", "Tailwind"],
+    color: COLORS.lime,
+  },
+  {
+    title: "Backend",
+    blurb: "REST APIs, database schemas, JWT auth and role-based access control that hold up in production.",
+    skills: ["Node.js", "NestJS", "Express", "MongoDB", "Jest"],
+    color: COLORS.sky,
+  },
+  {
+    title: "Data & Cloud",
+    blurb: "Shipping from development to deployment on AWS, GCP and Vercel, with Firebase for real-time apps.",
+    skills: ["AWS", "GCP", "Firebase", "Git"],
+    color: COLORS.sun,
+  },
+];
+
+/** Contact section intro. */
+export const CONTACT_NOTE = "Have a project, a role, or just a question? My inbox is open.";
 
 export const isPlaceholder = (s: string) => s.startsWith("[FILL IN");
