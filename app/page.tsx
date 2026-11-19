@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Hero } from "@/components/hero/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
 import { EXPERIENCE, PERSON, PROJECTS } from "@/config/site";
@@ -21,15 +22,28 @@ export default function Home() {
       <Hero />
 
       <main>
-        <section className={wrap} aria-labelledby="about-title">
-          <p className={eyebrow}>01 — About</p>
-          <h2 id="about-title" className={h2}>
-            Hi, I&apos;m {PERSON.fullName.split(" ")[0]}.
-          </h2>
-          <p className="text-[clamp(1.1rem,1.8vw,1.35rem)] leading-relaxed lg:pr-[25%]">{PERSON.summary}</p>
-          <p className="mt-4 font-mono text-[0.8rem] uppercase tracking-[0.08em] text-muted">
-            Based in {PERSON.location} · {PERSON.years} years
-          </p>
+        <section
+          className={`${wrap} grid items-center gap-x-[clamp(32px,6vw,96px)] gap-y-8 md:grid-cols-[1fr_auto]`}
+          aria-labelledby="about-title"
+        >
+          <div>
+            <p className={eyebrow}>01 — About</p>
+            <h2 id="about-title" className={h2}>
+              Hi, I&apos;m {PERSON.fullName.split(" ")[0]}.
+            </h2>
+            <p className="text-[clamp(1.1rem,1.8vw,1.35rem)] leading-relaxed">{PERSON.summary}</p>
+            <p className="mt-4 font-mono text-[0.8rem] uppercase tracking-[0.08em] text-muted">
+              Based in {PERSON.location} · {PERSON.years} years
+            </p>
+          </div>
+          <Image
+            src="/avatar.png"
+            alt={`Pixelated photo of ${PERSON.fullName}`}
+            width={64}
+            height={64}
+            unoptimized
+            className="order-first size-[clamp(160px,24vw,320px)] [image-rendering:pixelated] border-2 border-ink shadow-[7px_7px_0_var(--color-ink)] md:order-none"
+          />
         </section>
 
         <section id="work" className={`${wrap} scroll-mt-4 border-t-2 border-ink`} aria-labelledby="work-title">
