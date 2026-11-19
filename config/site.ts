@@ -8,7 +8,7 @@
 
 /** Production URL, used for canonical links and Open Graph. */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://manoj-portfolio.vercel.app"; // [FILL IN: real domain]
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://manoj-portfolio-8qzy.vercel.app";
 
 /** Letters in the hero. A space starts a new line. */
 export const NAME = "MANOJ HEGDE";
