@@ -83,7 +83,6 @@ export interface Project {
   logo?: string;
   tags: readonly string[];
   link?: string;
-  repo?: string;
   /** Card header colour. */
   accent: string;
 }
@@ -96,7 +95,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/vrutta.svg",
     tags: ["Next.js", "Node.js", "Express.js", "MongoDB", "AWS"],
     link: "https://vrutta.net",
-    repo: "https://github.com/manojhegde2001/group-ad",
     accent: COLORS.lime,
   },
   {
@@ -106,7 +104,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/vartula.svg",
     tags: ["Next.js", "React 19", "TypeScript", "Tailwind", "Playwright", "Vercel"],
     link: "https://www.vartula.net",
-    repo: "https://github.com/manojhegde2001/vartula",
     accent: COLORS.sky,
   },
   {
@@ -116,7 +113,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/online-mandi.svg",
     tags: ["Next.js", "Firebase", "Node.js", "GCP", "WebSockets"],
     link: "https://onlinemandi.in/",
-    repo: "https://github.com/sharathjoiskp/OnlineMandiWeb",
     accent: COLORS.coral,
   },
   {
@@ -126,7 +122,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/surya-transport.svg",
     tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind", "Google Sheets", "Framer Motion"],
     link: "https://www.suryatransport.in/",
-    repo: "https://github.com/manojhegde2001/surya-transport",
     accent: COLORS.sky,
   },
   {
@@ -136,7 +131,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/sanskrit-coaching.png",
     tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "RizzUI", "Vercel"],
     link: "https://www.sanatanadhara.in/",
-    repo: "https://github.com/manojhegde2001/sanskrit-coaching-fl",
     accent: COLORS.lime,
   },
   {
@@ -146,7 +140,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/kmb-associates.png",
     tags: ["Next.js 16", "React 19", "JavaScript", "Tailwind", "Vercel"],
     link: "https://www.kmbassociates.in/",
-    repo: "https://github.com/manojhegde2001/kmb-associates",
     accent: COLORS.coral,
   },
   {
@@ -155,7 +148,6 @@ export const PROJECTS: readonly Project[] = [
     logo: "/projects/terminal-portfolio.svg",
     tags: ["React", "Next.js", "Terminal UI", "Vercel"],
     link: "https://terminal-portfolio-green-nu.vercel.app/",
-    repo: "https://github.com/manojhegde2001/terminal-portfolio",
     accent: COLORS.sun,
   },
 ];

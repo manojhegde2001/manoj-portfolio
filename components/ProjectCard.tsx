@@ -6,7 +6,7 @@ const linkBtn =
   "inline-flex items-center gap-1 border-2 border-ink bg-white px-3 py-1.5 font-mono text-[0.72rem] uppercase tracking-[0.06em] shadow-[0_3px_0_var(--color-ink)] hover:bg-lime focus-visible:bg-lime";
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const { title, problem, logo, tags, link, repo, accent } = project;
+  const { title, problem, logo, tags, link, accent } = project;
   return (
     <DropIn
       index={index}
@@ -30,18 +30,11 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           ))}
         </ul>
 
-        {(link || repo) && (
+        {link && (
           <div className="flex flex-wrap gap-3 pt-5">
-            {link && (
-              <a className={linkBtn} href={link} target="_blank" rel="noopener noreferrer">
-                Live ↗<span className="sr-only">: {title} (opens in a new tab)</span>
-              </a>
-            )}
-            {repo && (
-              <a className={linkBtn} href={repo} target="_blank" rel="noopener noreferrer">
-                Code ↗<span className="sr-only">: {title} source (opens in a new tab)</span>
-              </a>
-            )}
+            <a className={linkBtn} href={link} target="_blank" rel="noopener noreferrer">
+              Live ↗<span className="sr-only">: {title} (opens in a new tab)</span>
+            </a>
           </div>
         )}
       </div>

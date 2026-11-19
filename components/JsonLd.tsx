@@ -59,7 +59,6 @@ export function JsonLd() {
             name: p.title,
             description: p.problem,
             ...(p.link && { url: p.link }),
-            ...(p.repo && { codeRepository: p.repo }),
             keywords: p.tags.join(", "),
             creator: { "@id": personId },
           },
