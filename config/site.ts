@@ -30,6 +30,7 @@ export const PERSON = {
   email: "manojhegde2001@gmail.com",
   github: "https://github.com/manojhegde2001",
   linkedin: "https://www.linkedin.com/in/manoj-hegde-dev",
+  instagram: "https://www.instagram.com/__its_manoj____/",
   resume: "https://drive.google.com/file/d/1BJUfBodWE-f1FB9m9I2QiTxa9tS0C_NU/view",
 } as const;
 

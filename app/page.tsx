@@ -124,6 +124,11 @@ export default function Home() {
               </a>
             </li>
             <li>
+              <a className={outLink} href={PERSON.instagram} target="_blank" rel="noopener noreferrer">
+                Instagram ↗<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
               <a className={outLink} href={PERSON.resume} target="_blank" rel="noopener noreferrer">
                 Résumé ↗<span className="sr-only"> (opens in a new tab)</span>
               </a>

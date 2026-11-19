@@ -86,7 +86,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-IN" className={`${display.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      {/* Extensions like ColorZilla add attributes to <body> before React loads. This only
+          ignores <body>'s own attributes; mismatches inside the page are still reported. */}
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

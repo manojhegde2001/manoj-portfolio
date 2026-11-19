@@ -29,7 +29,7 @@ export function JsonLd() {
         ...(current && { worksFor: { "@type": "Organization", name: current.company } }),
         alumniOf: { "@type": "CollegeOrUniversity", name: PERSON.education },
         knowsAbout: [...SKILLS],
-        sameAs: [PERSON.github, PERSON.linkedin],
+        sameAs: [PERSON.github, PERSON.linkedin, PERSON.instagram],
       },
       {
         "@type": "WebSite",
