@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="t">
+  <title id="t">Online Mandi</title>
+  <!-- Smooth Ground Curve -->
+  <path d="M20 57C26 55 38 55 44 57" stroke="#2F4A17" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Smooth Tapered Trunk -->
+  <path d="M30.5 28C30.5 38 29.8 48 29 56H35C34.2 48 33.5 38 33.5 28H30.5Z" fill="#2F4A17"/>
+
+  <!-- Golden Harvest Accent -->
+  <circle cx="32" cy="27" r="3" fill="#D98A2B"/>
+
+  <!-- Left Fronds: Vibrant Leaf Green -->
+  <path d="M32 26C28 14 18 8 9 9C16 16 25 21 32 26Z" fill="#6DA533"/>
+  <path d="M32 27C21 19 10 20 4 27C12 29 23 27 32 27Z" fill="#5F8A2C"/>
+  <path d="M32 28C23 27 14 31 8 40C15 36 24 33 32 28Z" fill="#4B7720"/>
+
+  <!-- Right Fronds: Deep Forest Green -->
+  <path d="M32 26C36 14 46 8 55 9C48 16 39 21 32 26Z" fill="#3B5D1B"/>
+  <path d="M32 27C43 19 54 20 60 27C52 29 41 27 32 27Z" fill="#2F4A17"/>
+  <path d="M32 28C41 27 50 31 56 40C49 36 40 33 32 28Z" fill="#213511"/>
+</svg>
