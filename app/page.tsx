@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Hero } from "@/components/hero/Hero";
+import { JsonLd } from "@/components/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
 import { EXPERIENCE, PERSON, PROJECTS } from "@/config/site";
 
@@ -19,6 +20,7 @@ export default function Home() {
         Skip to work
       </a>
 
+      <JsonLd />
       <Hero />
 
       <main>

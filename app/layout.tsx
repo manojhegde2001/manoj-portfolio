@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
-import { PERSON, SITE_URL } from "@/config/site";
+import { PERSON, SITE_URL, SKILLS } from "@/config/site";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -17,34 +17,75 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const title = `${PERSON.fullName}, ${PERSON.role}`;
-const description = `${PERSON.fullName} is a ${PERSON.role.toLowerCase()} in ${PERSON.location} with ${PERSON.years} years building React, Next.js and Node.js products. Grab a letter and throw it.`;
+const title = `${PERSON.fullName} · ${PERSON.role} in ${PERSON.location}`;
+const description = PERSON.seoDescription;
+const [firstName, ...rest] = PERSON.fullName.split(" ");
+const githubUser = new URL(PERSON.github).pathname.replace(/\//g, "");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title,
+  title: { default: title, template: `%s · ${PERSON.fullName}` },
   description,
+  applicationName: `${PERSON.fullName} Portfolio`,
+  keywords: [
+    ...new Set([
+      PERSON.fullName,
+      `${PERSON.fullName} portfolio`,
+      "full stack developer",
+      `full stack developer ${PERSON.location}`,
+      "Next.js developer",
+      "NestJS developer",
+      "React developer",
+      "Node.js developer",
+      "MERN stack developer",
+      ...SKILLS,
+    ]),
+  ],
+  authors: [{ name: PERSON.fullName, url: SITE_URL }],
+  creator: PERSON.fullName,
+  publisher: PERSON.fullName,
+  category: "technology",
   alternates: { canonical: "/" },
-  authors: [{ name: PERSON.fullName, url: PERSON.github }],
+  formatDetection: { telephone: false, address: false, email: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName,
+    lastName: rest.join(" "),
+    username: githubUser,
     url: "/",
     title,
     description,
-    siteName: PERSON.fullName,
+    siteName: `${PERSON.fullName} Portfolio`,
     locale: "en_IN",
   },
-  twitter: { card: "summary_large_image", title, description },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: "#f1ece1",
   colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+    <html lang="en-IN" className={`${display.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -21,6 +21,12 @@ export const PERSON = {
   tagline: "Full-stack dev · Next.js · NestJS · MongoDB",
   summary:
     "Full-stack developer with 3 years of experience building scalable web applications with Next.js, NestJS, React, Node.js, TypeScript and MongoDB. I design RESTful APIs, database schemas, role-based access control and optimized frontends, and deliver production systems from development to cloud deployment.",
+  /** Search-result snippet. Keep it around 150 characters. */
+  seoDescription:
+    "Full-stack developer in Bengaluru with 3 years building scalable web apps in Next.js, NestJS, React, Node.js and MongoDB. Projects, experience and contact.",
+  /** Shown in search results and link previews. Served from /public. */
+  avatar: "/avatar-512.png",
+  education: "MS Ramaiah University of Applied Sciences",
   email: "manojhegde2001@gmail.com",
   github: "https://github.com/manojhegde2001",
   linkedin: "https://www.linkedin.com/in/manoj-hegde-dev",
