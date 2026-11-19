@@ -4,12 +4,20 @@ import { JsonLd } from "@/components/JsonLd";
 import { PlaySection } from "@/components/game/PlaySection";
 import { ProjectCard } from "@/components/ProjectCard";
 import { EXPERIENCE, PERSON, PROJECTS } from "@/config/site";
+import { SOCIAL_ICONS } from "@/lib/skill-icons";
 
 const wrap = "px-(--gutter) py-[clamp(64px,9vw,110px)]";
 const eyebrow = "font-mono text-[0.76rem] uppercase tracking-[0.03em]";
 const h2 = "mt-3 mb-10 text-[clamp(2.4rem,6vw,4.6rem)] leading-none font-extrabold tracking-[-0.03em]";
 const outLink =
-  "border-b-2 border-ink font-mono text-[0.8rem] uppercase tracking-[0.04em] hover:bg-lime focus-visible:bg-lime";
+  "inline-flex items-center gap-2 border-b-2 border-ink pb-0.5 font-mono text-[0.8rem] uppercase tracking-[0.04em] hover:bg-lime focus-visible:bg-lime";
+
+const SOCIAL_LINKS = [
+  { label: "GitHub", href: PERSON.github, icon: SOCIAL_ICONS.github },
+  { label: "LinkedIn", href: PERSON.linkedin, icon: SOCIAL_ICONS.linkedin },
+  { label: "Instagram", href: PERSON.instagram, icon: SOCIAL_ICONS.instagram },
+  { label: "Résumé", href: PERSON.resume, icon: SOCIAL_ICONS.resume },
+] as const;
 
 export default function Home() {
   return (
@@ -113,26 +121,16 @@ export default function Home() {
             {PERSON.email}
           </a>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-            <li>
-              <a className={outLink} href={PERSON.github} target="_blank" rel="noopener noreferrer">
-                GitHub ↗<span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </li>
-            <li>
-              <a className={outLink} href={PERSON.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗<span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </li>
-            <li>
-              <a className={outLink} href={PERSON.instagram} target="_blank" rel="noopener noreferrer">
-                Instagram ↗<span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </li>
-            <li>
-              <a className={outLink} href={PERSON.resume} target="_blank" rel="noopener noreferrer">
-                Résumé ↗<span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </li>
+            {SOCIAL_LINKS.map(({ label, href, icon }) => (
+              <li key={label}>
+                <a className={outLink} href={href} target="_blank" rel="noopener noreferrer">
+                  <svg className="size-4 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d={icon} fillRule="evenodd" />
+                  </svg>
+                  {label} ↗<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </section>
       </main>
